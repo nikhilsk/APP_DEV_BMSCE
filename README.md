@@ -19,8 +19,6 @@ cp .env.example .env
 # Then open .env and fill in your Appwrite Project ID and Endpoint
 
 # 4. Start the app
-npm run dev
-# or
 npx expo start
 ```
 
