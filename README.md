@@ -14,22 +14,26 @@ Welcome to the React Native workshop! In this session, we'll build a multi-page 
 Run the following commands in your terminal:
 
 ```bash
-# Create a new Expo project (using @latest ensures you get the newest SDK)
-npx create-expo-app@latest MyWorkshopApp
+npx create-expo-app@latest MyWorkshopApp --template blank@sdk-54
+```
 
-# ✅ RECOMMENDED: Target a specific SDK version to match your Expo Go app
-# Replace sdk-54 with sdk-52, sdk-53 etc. based on your phone's Expo Go version
-npx create-expo-app@latest MyWorkshopApp --template default@sdk-54
+> 💡 **Available Templates (replace `sdk-54` with your Expo Go SDK version):**
+> | Template | What you get |
+> |---|---|
+> | `--template default@sdk-54` | `expo-router`, `app/` folder, file-based navigation ✅ Use this |
+> | `--template blank@sdk-54` | Just `App.js`, no navigation, great for simple demos |
+> | `--template blank-typescript@sdk-54` | Same as blank but with TypeScript |
+> | `--template tabs@sdk-54` | Tab-based navigation with expo-router |
 
+> ✅ **Pro Tip:** Using `@sdk-54` in the template name pins the project to Expo SDK 54, matching your Expo Go app version and avoiding the version mismatch error entirely!
+
+```bash
 # Navigate into the project folder
 cd MyWorkshopApp
 
 # Start the development server
 npx expo start
 ```
-
-> 💡 **Why use `--template default@sdk-54`?**  
-> This pins the project to a specific Expo SDK version from the very start, completely avoiding the "Incompatible Expo Go" version mismatch error. Always match this number to the SDK version shown in your Expo Go app.
 
 ---
 
