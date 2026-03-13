@@ -134,6 +134,7 @@ EXPO_PUBLIC_APPWRITE_PROJECT_ID=paste_your_project_id_here
 EXPO_PUBLIC_APPWRITE_ENDPOINT=paste_your_endpoint_here
 EXPO_PUBLIC_APPWRITE_DATABASE_ID=workshop
 EXPO_PUBLIC_APPWRITE_COLLECTION_ID=table1
+EXPO_PUBLIC_APPWRITE_PLATFORM=dev.bmsce.main
 ```
 
 > The last two (`DATABASE_ID` and `COLLECTION_ID`) are fixed — they must match the IDs you set in Console Steps 4 and 5.
@@ -155,7 +156,7 @@ import { Client, Databases, ID } from 'react-native-appwrite';
 const client = new Client()
   .setEndpoint(process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT)
   .setProject(process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID)
-  .setPlatform('dev.bmsce.main'); // must match the Platform you registered in the Console
+  .setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PLATFORM);
 
 const databases = new Databases(client);
 
