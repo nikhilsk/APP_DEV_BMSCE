@@ -88,10 +88,6 @@ Instead of a single-purpose app, we are building a **5-Page Suite** designed to 
 *   **Concepts:** Forms, `TextInput`, `useState` (React Hooks), and `KeyboardAvoidingView`.
 *   **Goal:** Learn how to handle user input without the keyboard covering the screen.
 
-### 🎨 Styling Demo (`app/nativewind-demo.jsx`)
-*   **Concepts:** 3 ways to style in React Native — inline styles, `StyleSheet.create()`, and an intro to utility-first frameworks.
-*   **Goal:** Understand the pros and cons of each styling approach.
-
 ---
 
 ## 🎓 4. Core Concepts Checklist

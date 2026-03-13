@@ -10,6 +10,8 @@ const Home = () => {
         <Link href="/profile" style={styles.navLink}>View Profile</Link>
         <Link href="/settings" style={styles.navLink}>Settings</Link>
         <Link href="/contact" style={styles.navLink}>Contact Us</Link>
+        <Link href="/form" style={styles.navLink}>📝 Register Form</Link>
+        <Link href="/submissions" style={styles.navLink}>📋 Submissions</Link>
         <Link href="/newpage" style={styles.navLink}>New Page</Link>
       </View>
     </View>

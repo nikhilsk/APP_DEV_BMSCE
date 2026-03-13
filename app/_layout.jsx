@@ -8,7 +8,8 @@ export default function RootLayout() {
       <Stack.Screen name="profile" options={{ title: "Profile" }} />
       <Stack.Screen name="settings" options={{ title: "Settings" }} />
       <Stack.Screen name="contact" options={{ title: "Contact" }} />
-      <Stack.Screen name="nativewind-demo" options={{ title: "NativeWind Demo" }} />
+      <Stack.Screen name="form" options={{ title: "Register" }} />
+      <Stack.Screen name="submissions" options={{ title: "Submissions" }} />
     </Stack>
   );
 }
