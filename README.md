@@ -4,6 +4,32 @@ Welcome to the React Native workshop! In this session, we'll build a multi-page 
 
 ---
 
+## ⚡ Clone & Run This Repo
+
+```bash
+# 1. Clone
+git clone https://github.com/viveksk/WorkshopApp.git
+cd WorkshopApp
+
+# 2. Install dependencies
+npm install --legacy-peer-deps
+
+# 3. Set up environment variables
+cp .env.example .env
+# Then open .env and fill in your Appwrite Project ID and Endpoint
+
+# 4. Start the app
+npm run dev
+# or
+npx expo start
+```
+
+Then **scan the QR code** with the Expo Go app on your phone.
+
+> ⚠️ `.env` is never committed to git (it contains secrets). You must copy `.env.example` → `.env` and fill in your own Appwrite credentials. See [`appwrite_doc.md`](./appwrite_doc.md) for the full setup guide.
+
+---
+
 ## 🚀 1. Getting Started From Scratch
 
 ### Prerequisites
