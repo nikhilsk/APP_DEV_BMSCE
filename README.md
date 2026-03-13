@@ -8,8 +8,8 @@ Welcome to the React Native workshop! In this session, we'll build a multi-page 
 
 ```bash
 # 1. Clone
-git clone https://github.com/viveksk/WorkshopApp.git
-cd WorkshopApp
+git clone https://github.com/nikhilsk/APP_DEV_BMSCE.git
+cd APP_DEV_BMSCE
 
 # 2. Install dependencies
 npm install --legacy-peer-deps
