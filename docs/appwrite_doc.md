@@ -43,10 +43,20 @@ Go to [https://cloud.appwrite.io](https://cloud.appwrite.io) and sign up.
 Appwrite blocks requests unless the platform (app bundle ID) is registered.
 
 1. In your project, go to **Overview → Add Platform**
-2. Choose **Flutter** → **Android** — or more precisely: choose **"Other"** / **React Native**
-3. For bundle ID enter: `dev.bmsce.main`  
-   *(This must exactly match the `.setPlatform()` value in your code — see Part 2)*
-4. Click **Next** / **Skip** through the rest of the wizard
+2. Choose **React Native**
+3. For **Bundle ID (Android)** / **Bundle ID (iOS)** enter: `dev.bmsce.main`  
+4. Click **Next**
+
+After adding the platform, Appwrite will show you a **"Getting Started"** screen with your env variables pre-filled. It will look like this:
+
+```env
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=xxxxxxxxxxxxxxxxxxxx
+EXPO_PUBLIC_APPWRITE_ENDPOINT=https://sgp.cloud.appwrite.io/v1
+```
+
+**Copy these values — you will need them in the next step.**
+
+5. Click **Next** / **Skip** to finish the wizard
 
 > ⚠️ If the platform is missing or mismatched, Appwrite returns a `401` or an **"app_list" / "platform_not_found"** error at runtime.
 
@@ -115,21 +125,25 @@ npm install react-native-appwrite react-native-url-polyfill --legacy-peer-deps
 
 ### Step 2: Create the `.env` file
 
-Create a file called `.env` in the **root of your project** (same folder as `package.json`):
+In the **root of your project** (same folder as `package.json`), create a new file called exactly `.env` — no other extension.
+
+Paste the values you copied from the Appwrite platform screen, plus the database and collection IDs:
 
 ```env
-EXPO_PUBLIC_APPWRITE_PROJECT_ID=your_project_id_here
-EXPO_PUBLIC_APPWRITE_ENDPOINT=https://sgp.cloud.appwrite.io/v1
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=paste_your_project_id_here
+EXPO_PUBLIC_APPWRITE_ENDPOINT=paste_your_endpoint_here
+EXPO_PUBLIC_APPWRITE_DATABASE_ID=workshop
+EXPO_PUBLIC_APPWRITE_COLLECTION_ID=table1
 ```
 
-Replace `your_project_id_here` with your actual Project ID from the Console.
+> The last two (`DATABASE_ID` and `COLLECTION_ID`) are fixed — they must match the IDs you set in Console Steps 4 and 5.
 
 **Why `EXPO_PUBLIC_` prefix?**  
 Expo only exposes environment variables to your app bundle if they start with `EXPO_PUBLIC_`. Without this prefix, `process.env.YOUR_VAR` returns `undefined` at runtime.
 
 > ⚠️ The `.env` file **must be in the project root** — not inside `lib/` or any subfolder. Expo does not scan subdirectories for `.env`.
 
-> ⚠️ Add `.env` to your `.gitignore` — never commit credentials to git.
+> ⚠️ `.env` is already in `.gitignore` — your credentials will never be committed to git.
 
 ---
 
@@ -145,8 +159,8 @@ const client = new Client()
 
 const databases = new Databases(client);
 
-const DATABASE_ID = 'workshop';   // must match the Database ID in Console
-const COLLECTION_ID = 'table1';   // must match the Collection ID in Console
+const DATABASE_ID = process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID;
+const COLLECTION_ID = process.env.EXPO_PUBLIC_APPWRITE_COLLECTION_ID;
 
 export const createSubmission = async (data) => {
   return await databases.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), data);
